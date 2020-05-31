@@ -20,12 +20,21 @@
 <script src="https://cdn.jsdelivr.net/npm/@apicart/vue-components@1.0.0-alpha6/dist/bundles/default/default.full.min.js"></script>
 <script>
 Apicart
-  .setDevEnv() // Switch to dev environment
+  .setDevEnv()
   .configure({
-    store: new Apicart.Store({
-      // Replace tokens with your PUBLIC tokens from the administration
-      token: "wM97PBPMXzra0X_FWNtL3a26KjEP1pHvCOL9qH!pXt31?OQD0UK2G23!QlpFXH2!"
-    })
+    // Replace tokens with your PUBLIC tokens from the administration
+    store: new Apicart.Store({ token: "sg5!DOP_6VDuIXtk9pP8s1vMhOkFymTFQEQgr?IuvDqh4!9!qSpcErdbfohhIcdA" }),
+    payments: new Apicart.Payments({ token: "s0xVnYTO9nSQu44XZA!_tqrbY!ZJrTJhRk9248BII_tfPlyINWn8TU3alUNrQA8z" }),
+    vueComponents: {
+      category: {
+        products: {
+          list: [
+            // Replace tokens with your PUBLIC tokens from the administration
+            "https://cdn.apicart.dev/external/1srx2kfo6z15bh2vdnlyy8h7d81sqc6b/data/te/test123.json"
+          ]
+        }
+      }
+    }
   })
   .initVueBundle();
 </script>
