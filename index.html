@@ -5,6 +5,29 @@
 	<title>test</title>
 </head>
 <body>
-	<script src="https://cdn.jsdelivr.net/npm/@apicart/vue-components@1.0.0-alpha6/dist/bundles/default/default.full.min.js"></script>
+	<!-- #apicart-cart-dropdown will be replaced by dropdown --->
+<div id="apicart-cart-dropdown"></div>
+
+<!-- 
+  After clicking on any element with the data-apicart-add-item attribute
+  an item with the given url will be added into the cart
+--->
+<button data-apicart-add-item="https://cdn.apicart.dev/external/wlhv1egho2u4p0e0nkne2mks7f9btigi/data/01/1.json">Buy</button>
+
+<!-- #apicart will be replaced by components according to configuration --->
+<div id="apicart"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@apicart/vue-components@1.0.0-alpha6/dist/bundles/default/default.full.min.js"></script>
+<script>
+Apicart
+  .setDevEnv() // Switch to dev environment
+  .configure({
+    store: new Apicart.Store({
+      // Replace tokens with your PUBLIC tokens from the administration
+      token: "9mCu3DlBCa4REI?Q7kKly!Rw6!_FvD8K_dgPXe1b20?r6!sPTQMyCpq_ADt!jXOD"
+    })
+  })
+  .initVueBundle();
+</script>
 </body>
 </html>
